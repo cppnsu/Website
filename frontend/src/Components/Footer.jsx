@@ -1,10 +1,9 @@
 const Footer = (props) => {
-    return (
-        <div>
-            <p>{props.contact_email}</p>
-            <p>{props.Instagram}</p>
-        </div>
-    );
+  return (
+    <div>
+      <p>Help, my foot</p>
+    </div>
+  );
 };
 
 export default Footer;
