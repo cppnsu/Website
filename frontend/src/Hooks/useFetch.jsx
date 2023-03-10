@@ -1,20 +1,23 @@
 import { useState, useEffect } from "react";
 
-const useFetch = (url) => {
+export default function useFetch (url) {
   const [data, setData] = useState(null);
+  // proxy isn't working, so this makes us always ping the internal Node endpoint
   const actualURL = "http://localhost:3000/" + String(url)
+  const [error, setError] = useState('')
 
   useEffect(() => {
-    fetch(actualURL)
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, [url]);
+    async function fetchData() {
+      try {
+        const response = await fetch(actualURL);
+        const json = await response.json();
+        setData(json);
+      } catch (error) {
+        setError(error);
+      }
+    }
 
-  if(data === null) {
-    return "...Loading"
-  }
-
-  return data;
+    fetchData();
+}, [url])
+  return {data, error};
 };
-
-export default useFetch;
