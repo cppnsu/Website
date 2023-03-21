@@ -1,16 +1,14 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main" : "./src/index.js",
-  "description" : "",
+  "description": "",
   "scripts": {
     "start": "cd src && node index.js",
     "dev": "cd src && nodemon index.js"
   },
   "author": "Chirayu Rai",
-  "license": "",
-  "repository" : {
-    "type" : "git",
+  "repository": {
+    "type": "git",
     "url": "git+https://github.com/cppnsu/website.git"
   },
   "bugs": {
