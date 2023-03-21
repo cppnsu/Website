@@ -4,9 +4,8 @@
   "main" : "./src/index.js",
   "description" : "",
   "scripts": {
-    "build" : "npm install",
-    "start": "node ./src/index.js",
-    "dev": "nodemon index.js"
+    "start": "cd src && node index.js",
+    "dev": "cd src && nodemon index.js"
   },
   "author": "Chirayu Rai",
   "license": "",
