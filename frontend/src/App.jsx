@@ -13,7 +13,7 @@ import {
 } from "./Pages/Helper";
 
 function App() {
-  const { data, error } = useFetch("");
+  const { data, error } = useFetch("Home");
   if (data) {
     console.log(data.document);
     return (
@@ -32,6 +32,9 @@ function App() {
         </BrowserRouter>
       </div>
     );
+  }
+  else {
+    console.error(error)
   }
 }
 
