@@ -1,26 +1,20 @@
 require("dotenv").config({ path: "../.env" });
-const express = require("express");
-const app = express();
-const cors = require("cors");
-const PORT = process.env.PORT || 3000;
-const uri = process.env.ATLAS_URI;
 const { MongoClient } = require('mongodb');
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000
 
-app.use(cors());
-app.use(express.json());
-
-
+const uri = process.env.ATLAS_URI;
 const client = new MongoClient(uri);
 
 app.get("/:query", async (req, res) => {
-  let query = req.params.query;
+  let my_query = req.params.query;
   let item = await client.db("dev-nsu-website")
     .collection("Data")
-    .find({ Pages: query })
+    .find({ "Pages": my_query })
+    .toArray()
 
   return res.json(item)
-
-
 })
 
 client.connect(err => {
@@ -30,7 +24,6 @@ client.connect(err => {
     console.log("listening for requests");
   })
 });
-
 
 
 
