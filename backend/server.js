@@ -1,10 +1,12 @@
 // IMPORTS
+const cors = require('cors');
 const { MongoClient } = require('mongodb');
 const express = require('express');
 const app = express();
 require("dotenv").config({ path: ".env" });
 
 // DECLARING CONSTANTS
+app.use(cors({ origin: "*" }));
 const PORT = process.env.PORT || 3000
 const uri = process.env.ATLAS_URI;
 const client = new MongoClient(uri);
