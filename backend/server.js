@@ -16,7 +16,7 @@ app.get("/:query", async (req, res) => {
     .find({ Pages: req.params["query"] })
     .toArray();
 
-  return res.json(item)
+  return res.json(myQuery)
 })
 
 
