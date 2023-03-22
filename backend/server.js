@@ -8,10 +8,9 @@ const uri = process.env.ATLAS_URI;
 const client = new MongoClient(uri);
 
 app.get("/:query", async (req, res) => {
-  let my_query = req.params.query;
   let item = await client.db("dev-nsu-website")
     .collection("Data")
-    .find({ "Pages": my_query })
+    .find({ Pages: req.params["query"] })
     .toArray()
 
   return res.json(item)
