@@ -13,7 +13,7 @@ const client = new MongoClient(uri);
 app.get("/:query", async (req, res) => {
   let myQuery = await client.db("dev-nsu-website")
     .collection("Data")
-    .find({ Pages: myQuery })
+    .find({ Pages: req.params["query"] })
     .toArray();
 
   return res.json(item)
