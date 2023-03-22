@@ -1,11 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server/server.js",
   "description": "",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "cd server && node server.js",
+    "dev": "cd server && nodemon server.js"
   },
   "author": "Chirayu Rai",
   "repository": {
