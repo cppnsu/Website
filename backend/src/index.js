@@ -1,29 +1,36 @@
 require("dotenv").config({ path: "../.env" });
-console.log(__dirname + ".env")
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
+const uri = process.env.ATLAS_URI;
+const { MongoClient } = require('mongodb');
+
 app.use(cors());
 app.use(express.json());
-app.use(require("./routes/endpoints"));
-// get driver connection
-const dbo = require("./db/conn");
 
-dbo.connectToServer(function(err) {
-  // connect to server, THEN LISTEN TO REQUESTS
-  if (err) console.error(err);
-  app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`)
-  })
+
+const client = new MongoClient(uri);
+
+app.get("/:query", async (req, res) => {
+  let query = req.params.query;
+  let item = await client.db("dev-nsu-website")
+    .collection("Data")
+    .find({ Pages: query })
+
+  return res.json(item)
+
+
 })
 
-/*
-app.listen(port, () => {
-  // perform a database connection when server starts
-  dbo.connectToServer(function(err) {
-    if (err) console.error(err);
-  });
-  console.log(`Server is running on port: ${port}`);
+client.connect(err => {
+  if (err) { console.error(err); return false; }
+  // connection to mongo is successful, listen for requests
+  app.listen(PORT, () => {
+    console.log("listening for requests");
+  })
 });
-*/
+
+
+
+
