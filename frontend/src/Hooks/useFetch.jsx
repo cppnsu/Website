@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-export default function useFetch (url) {
+export default function useFetch(url) {
   const [data, setData] = useState(null);
   // proxy isn't working, so this makes us always ping the internal Node endpoint
-  const actualURL = "http://localhost:3000/" + String(url)
+  const actualURL = "https://navy-blue-bee-belt.cyclic.app/" + String(url)
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -18,6 +18,6 @@ export default function useFetch (url) {
     }
 
     fetchData();
-}, [url])
-  return {data, error};
+  }, [url])
+  return { data, error };
 };

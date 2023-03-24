@@ -1,11 +1,20 @@
+import useFetch from "../Hooks/useFetch";
+
+
 const Home = () => {
-  return (
-    <div>
-      <p className={`text-xl font-bold`}>
-        hellp this is the home page
-      </p>
-    </div>
-  );
+  const { data, error } = useFetch("Home");
+
+  if (data) {
+    console.log(data)
+    return (
+      <div>
+        <p className={`text-xl font-bold`}>
+          hellp this is the home page
+        </p>
+        <pre>{data.document}</pre >
+      </div>
+    );
+  }
 };
 
 export default Home;
