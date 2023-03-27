@@ -5,4 +5,4 @@ import Links from "./Links";
 import Layout from "./Layout"
 import NotFound from "./NotFound"
 
-export {NotFound, Home, About, CultureNight, Links, Layout};
+export { NotFound, Home, About, CultureNight, Links, Layout };
