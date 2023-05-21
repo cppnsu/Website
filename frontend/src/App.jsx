@@ -8,6 +8,7 @@ import {
   Links,
   Layout,
   NotFound,
+  UpcomingEvents,
 } from "./Pages/Helper";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
+            <Route path="upcoming-events" element={<UpcomingEvents />} />
             <Route path="links" element={<Links />} />
             <Route path="culture-night" element={<CultureNight />} />
             <Route path="*" element={<NotFound />} />

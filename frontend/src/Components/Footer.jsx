@@ -5,7 +5,7 @@ import nsuLogoLight from "../assets/nsuLogoLight.svg"
 
 const Footer = () => {
   return (
-    <div className='w-screen h-40 bg-rose-700 '>
+    <div className='w-screen h-40 sm:h-44 bg-rose-700 '>
       <div className='flex justify-center sm:justify-end'>
         <div className='flex flex-col mr-5 mt-2.5'>
           <div className='w-36 pl-4'>
@@ -28,12 +28,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className='flex justify-center pt-2'>
+      <div className='flex justify-center py-1'>
         <hr className='w-11/12' />
       </div>
-      <div className=' sm:w-1/4 sm:pt-2.5 sm:pl-3 pl-3 w-36 pt-2 flex flex-row space-x-4 content-center justify-center'>
-        <img src={nsuLogoLight} alt='nsu_logo' className='sm:w-1/4 sm:h-1/4 w-10 h-10' />
-        <p className='text-neutral-50 font-extrabold sm:text-xl text-m mt-1'>CPP NSU</p>
+      <div className=' sm:w-1/2 sm:py-1 sm:pl-5 pl-3 w-36 pt-2 flex flex-row space-x-4 justify-left'>
+        <img src={nsuLogoLight} alt='nsu_logo' className='sm:w-16 sm:h-16 w-10 h-10' />
+        <p className='text-neutral-50 font-extrabold text-m mt-1 sm:text-xl sm:mt-4'>CPP NSU</p>
       </div>
     </div>
   );

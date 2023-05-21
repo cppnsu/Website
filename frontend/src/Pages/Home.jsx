@@ -1,20 +1,15 @@
 import useFetch from "../Hooks/useFetch";
+import { useState } from "react";
 
 
 const Home = () => {
-  const { data, error } = useFetch("Home");
-
-  if (data) {
-    console.log(data)
-    return (
-      <div>
-        <p className={`text-xl font-bold`}>
-          hellp this is the home page
-        </p>
-        <pre>{data.document}</pre >
-      </div>
-    );
-  }
-};
+  return (
+    <div className="bg-gradient-to-r from-blue-400 to-purple-400 bg-cover bg-fixed">
+      <p className="font-bold">
+        hello this is the home page
+      </p>
+    </div>
+  );
+}
 
 export default Home;
