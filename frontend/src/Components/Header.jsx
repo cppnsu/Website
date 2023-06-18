@@ -42,6 +42,7 @@ const Header = () => {
     ['Upcoming Events', '/upcoming-events'],
   ]
 
+  // what navbar looks like on mobile
   const mobileNavPage =
     <div className="w-screen h-screen bg-slate-100 fixed inset-0 z-10">
       <button onClick={() => setIsOpen(!isOpen)}>
@@ -55,6 +56,7 @@ const Header = () => {
             </a></li>)}
       </ul>
     </div>
+  // if menu is not open render nothing, otherwise render the navigation page
   const mobileBar =
     <div className="relative right">
       <button onClick={() => setIsOpen(!isOpen)}>
@@ -63,6 +65,7 @@ const Header = () => {
       {isOpen ? mobileNavPage : null}
     </div>
 
+  // desktop navbar on right side
   const desktop =
     <div className="flex justify-center flex-col bg-slate-100 rounded-2xl shadow-sm">
       <ul className="flex pl-9 sm:pl-0">

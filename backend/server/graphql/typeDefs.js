@@ -60,7 +60,6 @@ const typeDefs = `
     link_objects: [linkObject!]!
     Name: String!  
   }
-
   input linkObjectInput {
     Placeholder: String!
     Link: String!
@@ -70,10 +69,76 @@ const typeDefs = `
     link_objects: [linkObjectInput]
   }
 
+  # CULTURE NIGHT
+  type cultureNight {
+  _id: ID!
+  Summary: String
+  Date: String
+  Time_start: String
+  Time_end: String
+  Price: Float
+  Featured: [String]
+  Description: String
+  Japanese_title: String
+  English_title: String
+  Gallery: [String]
+  more_info_link: String
+}
+  input updateCultureNight {
+  _id: ID
+  Summary: String
+  Date: String
+  Time_start: String
+  Time_end: String
+  Price: Float
+  Featured: [String]
+  Description: String
+  Japanese_title: String
+  English_title: String
+  Gallery: [String]
+  more_info_link: String
+}
+
+  # ABOUT 
+  type About {
+  _id: ID!
+  Description: String
+  Signup_Link: String
+  Splash_photo_link: String
+  Splash_photo_ID: String
+  Board_Members: [boardMember]
+  Gallery: [String]
+}
+type boardMember {
+  Name: String
+  Position: String
+  Year: String
+  Major: String
+  Headshot_Link: String
+}
+input boardMemberInput {
+  Name: String
+  Position: String
+  Year: String
+  Major: String
+  Headshot_Link: String
+}
+  input updateAbout {
+  _id: ID!
+  Description: String
+  Signup_Link: String
+  Splash_photo_link: String
+  Splash_photo_ID: String
+  Board_Members: [boardMemberInput]
+  Gallery: [String]
+  }
+
   type Query {
     upcomingEvents: [Event!]
     threeUpcomingEvents: [Event!]
     getLinksList: [Links!]!
+    getCultureNight: [cultureNight!]
+    getAbout: [About!]
   }
 
   type Mutation {
@@ -87,6 +152,8 @@ const typeDefs = `
     deleteLink(input: String!): Links
     deleteManyLinks(input: LinksInput): Links
     deleteLinkSection(input: String!): Links
+    updateCultureNight(input: ID): cultureNight
+    updateAbout(input: ID): About
   }
 `;
 
