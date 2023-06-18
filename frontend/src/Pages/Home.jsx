@@ -8,6 +8,77 @@ const Home = () => {
       <p className="font-bold">
         hello this is the home page
       </p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
+
+      <p>s</p>
+      <br />
+      <p>s</p>
+      <p>s</p>
     </div>
   );
 }
