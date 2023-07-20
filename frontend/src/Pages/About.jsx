@@ -22,7 +22,8 @@ const About = () => {
   `
 
   const { data, error } = useGraphql(reqBody)
-  if (data) console.log(data)
+  if (data) console.log("Here is the data: ", data)
+  if (error) console.log("here is the error: ", error)
 
   return (
     <div>

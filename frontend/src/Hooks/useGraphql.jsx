@@ -5,7 +5,7 @@ export default function useGraphql(reqBody) {
   const [data, setData] = useState();
   const [error, setError] = useState()
   const { state: siteContext, dispatch: siteDispatch } = useContext(SiteContext)
-  const url = "http://localhost:3000/graphql"
+  const url = "https://website-eight-sigma-79.vercel.app/graphql"
 
   const requestOptions = {
     method: "POST",
@@ -17,6 +17,7 @@ export default function useGraphql(reqBody) {
 
   useEffect(() => {
     siteDispatch({ type: "setLoading", value: true })
+    console.log("Request options in useGraphql hook: ", requestOptions)
     fetch(url, requestOptions)
       .then((res) => {
         console.log("Recieved a response!")
