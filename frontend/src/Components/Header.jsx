@@ -1,34 +1,16 @@
 import nsuLogoDark from "../assets/nsuLogoDark.svg"
-import { useState, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faX } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate, useLocation } from "react-router-dom";
+import { SiteContext } from "../SiteContext";
 
 const Header = () => {
-
+  const { state: siteContext, dispatch: siteDispatch } = useContext(SiteContext)
   // used to nav to homepage when clicking logo
   const nav = useNavigate();
   // used to check what current page name is 
   const location = useLocation();
-
-  // All this used to check current screen width
-  const [screenWidth, setScreenWidth] = useState(getCurrentWidth());
-  function getCurrentWidth() {
-    return window.innerWidth
-  }
-  useEffect(() => {
-    const updateWidth = () => {
-      setScreenWidth(getCurrentWidth())
-    }
-    window.addEventListener('resize', updateWidth);
-
-    return (() => {
-      window.removeEventListener('resize', updateWidth)
-    })
-  })
-
-  // How many pixels and under we should use to switch to mobile view
-  const mobileWidthBreakpoint = 640;
 
   // How we manage state of mobile menu being open or not
   let [isOpen, setIsOpen] = useState(false);
@@ -57,7 +39,7 @@ const Header = () => {
       </ul>
     </div>
   // if menu is not open render nothing, otherwise render the navigation page
-  const mobileBar =
+  const MobileBar =
     <div className="relative right">
       <button onClick={() => setIsOpen(!isOpen)}>
         <FontAwesomeIcon icon={faBars} className=" w-6 h-6 py-5 px-4" />
@@ -66,7 +48,7 @@ const Header = () => {
     </div>
 
   // desktop navbar on right side
-  const desktop =
+  const Desktop =
     <div className="flex justify-center flex-col bg-slate-100 rounded-2xl shadow-sm">
       <ul className="flex pl-9 sm:pl-0">
         {navBarPages.map(([title, url]) =>
@@ -88,9 +70,8 @@ const Header = () => {
       </button>
       {/* navlinks */}
       {
-        screenWidth <= mobileWidthBreakpoint ? mobileBar : desktop
+        siteContext.isMobile ? MobileBar : Desktop
       }
-
     </div >
   );
 };

@@ -1,5 +1,5 @@
 const { gql } = require('@apollo/server')
-const { Event, Links } = require("../db/models/Models")
+//const { Event, Links, CultureNight, About } = require("../db/models/Models")
 const { DateScalarType, Time12HourScalarType } = require("./DateScalarType")
 
 const typeDefs = `
@@ -22,7 +22,7 @@ const typeDefs = `
     Sign_up_form: String!
   }
   input addEventInput {
-  _id: ID
+  _id: ID!
   Name: String!
   Date_Start: String!
   Date_End: String
@@ -75,7 +75,6 @@ const typeDefs = `
   Summary: String
   Date: String
   Time_start: String
-  Time_end: String
   Price: Float
   Featured: [String]
   Description: String

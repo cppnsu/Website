@@ -1,10 +1,10 @@
-require("dotenv").config({ path: "../.env" });
+require("dotenv").config({ path: "./server/.env" });
 const express = require("express");
 const { ApolloServer } = require("@apollo/server")
 const { expressMiddleware } = require("@apollo/server/express4")
 const { json } = require("body-parser")
-const typeDefs = require("./graphql/typeDefs")
-const resolvers = require("./graphql/resolvers")
+const typeDefs = require("./server/graphql/typeDefs")
+const resolvers = require("./server/graphql/resolvers")
 const cors = require("cors");
 
 
@@ -24,7 +24,7 @@ async function startApolloServer() {
   app.use(express.json());
 
   const port = process.env.PORT || 3000;
-  const dbo = require("./db/conn");
+  const dbo = require("./server/db/conn");
 
   dbo.connectToServer(function(err) {
     if (err) console.error(err);

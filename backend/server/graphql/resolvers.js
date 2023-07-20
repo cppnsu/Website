@@ -1,5 +1,7 @@
 const Links = require('../db/models/Links')
 const Event = require('../db/models/Event')
+const CultureNight = require("../db/models/CultureNight")
+const About = require("../db/models/About")
 const DateScalarType = require('./DateScalarType')
 
 const resolvers = {
@@ -7,7 +9,7 @@ const resolvers = {
   Query: {
     threeUpcomingEvents: async () => {
       try {
-        const threeEvents = await Event.find({ Date_Start: { $lt: Date.now() } }).sort({ Date_Start: 1 }).limit(3);
+        const threeEvents = await Event.find({ Date_Start: { $gt: Date.now() } }).sort({ Date_Start: 1 }).limit(3);
         return threeEvents;
       } catch (err) {
         console.error(err);
@@ -32,16 +34,35 @@ const resolvers = {
         throw new Error("Could not fetch links")
       }
     },
+    getCultureNight: async () => {
+      try {
+        const cultureNight = await CultureNight.find({});
+        return cultureNight;
+      } catch (err) {
+        console.error(err);
+        throw new Error("Could not fetch culture night")
+      }
+    },
+    getAbout: async () => {
+      try {
+        const about = await About.find({});
+        console.log(about)
+        return about;
+      } catch (err) {
+        console.error(err);
+        throw new Error("Could not fetch about")
+      }
+    },
   },
   Mutation: {
     addEvent: async (_, args) => {
       try {
         const newEvent = new Event(args.input)
-        const savedEvent = newEvent.save()
+        const savedEvent = await newEvent.save()
         return savedEvent
       } catch (err) {
         console.error(err);
-        return null;
+        return "There was an error adding this event";
       }
     },
     updateEvent: async (_, { name, input }) => {
@@ -54,7 +75,7 @@ const resolvers = {
         return updatedEvent;
       } catch (err) {
         console.error(err);
-        return null;
+        return "There was an error updating this event";
       }
     },
     deleteEvent: async (_, { name }) => {
@@ -63,7 +84,7 @@ const resolvers = {
         return deletedEvent;
       } catch (err) {
         console.error(err);
-        return null;
+        return "There was an error deleting this event";
       }
     },
     updateLink: async (_, { name, index, ...payload }) => {
@@ -82,7 +103,7 @@ const resolvers = {
         return parent;
       } catch (err) {
         console.error(err);
-        return null;
+        return "There was an error updating the link";
       }
     }
   },
