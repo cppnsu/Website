@@ -16,22 +16,20 @@ export default function useGraphql(reqBody) {
   }
 
   useEffect(() => {
-    siteDispatch({ type: "setLoading", value: true })
-    console.log("Request options in useGraphql hook: ", requestOptions)
+    siteDispatch({ type: "setIsLoading", value: true })
     fetch(url, requestOptions)
       .then((res) => {
-        console.log("Recieved a response!")
         return res.json()
       })
       .then((data) => {
         console.log("Recieved some data: ", data)
         setData(data)
-        siteDispatch({ type: "setLoading", value: false })
+        siteDispatch({ type: "setIsLoading", value: false })
       })
       .catch((error) => {
         console.error(error)
         setError(error)
-        siteDispatch({ type: "setLoading", value: false })
+        siteDispatch({ type: "setIsLoading", value: false })
       })
 
   }, [])

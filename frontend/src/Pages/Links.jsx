@@ -15,7 +15,7 @@ const Links = () => {
   `
 
   const { data, error } = useGraphql(reqBody)
-  if (data) console.log(data)
+  // TODO: Handle if have data and if not, and also handle mobile (nested if statements)
 
   return (
     <div>

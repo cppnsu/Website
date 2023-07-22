@@ -10,12 +10,14 @@ import {
   NotFound,
   UpcomingEvents,
 } from "./Pages/Helper";
-import { SiteContextProvider } from "./SiteContext";
+import { SiteContextProvider, SiteContext } from "./SiteContext";
+import LoadingSpinner from "./Components/LoadingSpinner"
 
 function App() {
   return (
     <div>
       <SiteContextProvider>
+        <LoadingSpinner />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
