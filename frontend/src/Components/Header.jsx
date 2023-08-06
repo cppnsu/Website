@@ -26,7 +26,7 @@ const Header = () => {
 
   // what navbar looks like on mobile
   const mobileNavPage =
-    <div className="w-screen h-screen bg-slate-100 fixed inset-0 z-10">
+    <div className="bg-slate-100 w-screen h-screen fixed inset-0 z-30">
       <button onClick={() => setIsOpen(!isOpen)}>
         <FontAwesomeIcon icon={faX} className="w-l4 h-14 px-9 py-8" />
       </ button>
@@ -60,7 +60,7 @@ const Header = () => {
     </div>
 
   return (
-    <div className="bg-transparent w-screen h-1/20 py-7 px-5 flex justify-between absolute top flex-row">
+    <div className="bg-transparent w-screen h-1/20 py-7 px-5 flex justify-between fixed top-0 flex-row z-30">
       {/* clickable logo that navigates to homepage */}
       <button className="w-16 md:hover:ring-2 ring-rose-700 rounded-full" onClick={() => { nav("/") }} >
         <img
