@@ -61,7 +61,7 @@ const Home = () => {
         imagesArr.push(
           <img
             src={data.data.getCultureNight[0].Gallery[index % lenGalleryArr]}
-            alt={`Gallery-Image-${index % cnGalleryLen}`}
+            alt={`Gallery-Image-${index}`}
             className="object-cover w-full h-full"
           />
         )
