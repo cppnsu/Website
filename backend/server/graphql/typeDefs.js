@@ -79,7 +79,8 @@ const typeDefs = `
   Featured: [String]
   Description: String
   Japanese_title: String
-  English_title: String
+  English_definition: String
+  English_romaji: String
   Gallery: [String]
   more_info_link: String
 }
@@ -93,7 +94,8 @@ const typeDefs = `
   Featured: [String]
   Description: String
   Japanese_title: String
-  English_title: String
+  English_definition: String
+  English_romaji: String
   Gallery: [String]
   more_info_link: String
 }

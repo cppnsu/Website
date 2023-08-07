@@ -31,7 +31,11 @@ const cultureNightSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  English_title: {
+  English_definition: {
+    type: String,
+    required: true,
+  },
+  English_romaji: {
     type: String,
     required: true
   },
