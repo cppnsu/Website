@@ -48,9 +48,9 @@ const Home = () => {
   const [baseIndex, setBaseIndex] = useState(0)
 
   if (data) {
-    const cnGalleryCols = 3;
-    const cnGalleryRows = 5;
-    const cnGalleryLen = cnGalleryRows * cnGalleryCols;
+    let cnGalleryCols = 3;
+    let cnGalleryRows = 5;
+    let cnGalleryLen = cnGalleryRows * cnGalleryCols;
     const galleryArr = data.data.getCultureNight[0].Gallery
     const lenGalleryArr = galleryArr.length;
     const imagesArr = []
