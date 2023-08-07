@@ -49,8 +49,11 @@ const Home = () => {
 
   if (data) {
     const cnGalleryCols = 3;
+    console.log(cnGalleryCols)
     const cnGalleryRows = 5;
+    console.log(cnGalleryRows)
     const cnGalleryLen = cnGalleryRows * cnGalleryCols;
+    console.log(cnGalleryLen)
     const galleryArr = data.data.getCultureNight[0].Gallery
     const lenGalleryArr = galleryArr.length;
     const imagesArr = []
