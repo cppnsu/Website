@@ -48,15 +48,15 @@ const Home = () => {
   const [baseIndex, setBaseIndex] = useState(0)
 
   if (data) {
-    const cnGalleryCols = 3;
-    const cnGalleryRows = 5;
+    let cnGalleryCols = 3;
+    let cnGalleryRows = 5;
     const cnGalleryLen = cnGalleryRows * cnGalleryCols;
     const galleryArr = data.data.getCultureNight[0].Gallery
     const lenGalleryArr = galleryArr.length;
     const imagesArr = []
 
     function cn() {
-      for (let i = 0; i < cnGalleryRows * cnGalleryCols; i++) {
+      for (let i = 0; i < 15; i++) {
         let index = baseIndex + i
         imagesArr.push(
           <img
@@ -117,7 +117,7 @@ const Home = () => {
           </div>
         </div>
         {/* CULTURE NIGHT */}
-        <div className={`relative w-screen h-screen grid grid-cols-${cnGalleryCols} grid-rows-${cnGalleryRows} gap-y-1 gap-x-2 animate-fadeIn`}>
+        <div className={`relative w-screen h-screen grid grid-cols-3 grid-rows-5 gap-y-1 gap-x-2 animate-fadeIn`}>
           {imagesArr.map((item) => {
             return <div className="relative h-full overflow-hidden bg-cover">{item}</div>
           })}
