@@ -56,7 +56,7 @@ const Home = () => {
     const imagesArr = []
 
     function cn() {
-      for (let i = 0; i < cnGalleryLen; i++) {
+      for (let i = 0; i < cnGalleryRows * cnGalleryCols; i++) {
         let index = baseIndex + i
         imagesArr.push(
           <img
