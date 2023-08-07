@@ -214,7 +214,7 @@ const Home = () => {
             </div>
           </div>
           {/* CULTURE NIGHT */}
-          <div className={`relative w-screen h-screen grid grid-cols-3 grid-rows-5 gap-y-1 gap-x-2 animate-fadeIn`}>
+          <div className={`relative w-screen h-screen grid grid-cols-2 gap-y-1 gap-x-2 animate-fadeIn`}>
             {imagesArr.map((item) => {
               return <div className="relative h-full overflow-hidden bg-cover">{item}</div>
             })}
