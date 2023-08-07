@@ -9,7 +9,7 @@ const Layout = () => {
   /*** MOBILE VIEW CONTEXT UPDATE ***/
   // Updating the mobile view condition here since it's the parent to everything else
   const { state: siteContext, dispatch: siteDispatch } = useContext(SiteContext)
-  const mobileWidthBreakpoint = 640;
+  const mobileWidthBreakpoint = 768;
 
   useEffect(() => {
     function handleResize() {

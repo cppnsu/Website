@@ -30,7 +30,7 @@ const Header = () => {
       <button onClick={() => setIsOpen(!isOpen)}>
         <FontAwesomeIcon icon={faX} className="w-l4 h-14 px-9 py-8" />
       </ button>
-      <ul className="flex flex-col pl-9 py-4 sm:pl-0">
+      <ul className="flex flex-col pl-9 py-4 ">
         {navBarPages.map(([title, url]) =>
           <li key={title} className="py-3">
             <a href={url} className={`rounded-lg text-4xl py-2 px-2 text-slate-800 ${location.pathname === url ? "font-semibold bg-slate-200" : "font-medium"} hover:font-bold`}>

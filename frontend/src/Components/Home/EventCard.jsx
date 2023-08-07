@@ -1,5 +1,5 @@
 import { format } from "date-fns-tz";
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -12,8 +12,8 @@ const EventCard = (props) => {
     navigate(signUp);
   }
   return (
-    <div className="relative w-1/4  h-96 bg-stone-100 overflow-hidden shadow-xl rounded-lg">
-      <div className="h-52">
+    <div className="relative w-1/4 h-96 bg-stone-100 overflow-hidden shadow-xl rounded-lg">
+      <div className="h-48">
         <img src={props.event.Photo_url} alt="A photo" className="object-cover h-full" />
       </div>
       <div className="mt-3 flex flex-col justify-center text-center space-y-2 ">
@@ -27,10 +27,10 @@ const EventCard = (props) => {
           {format(Date.parse(props.event.Date_Start), 'MMMM dd, Y', { timeZone: 'America/Los_Angeles' })}
         </p>
         <p>
-          {props.event.Location}
+          <FontAwesomeIcon icon={faLocationDot} /> {props.event.Location}
         </p>
-        <button onClick={handleClickLearnMore} className="bg-rose-700 w-32 self-center text-slate-100 rounded">
-          Learn More <FontAwesomeIcon icon={faArrowRight} className="w-3 h-3 " />
+        <button onClick={handleClickLearnMore} className="bg-rose-700 w-28 self-center text-slate-100 rounded-full p-1 text-md">
+          Sign up <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
         </button>
       </div>
     </div>
