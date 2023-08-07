@@ -81,15 +81,16 @@ const Home = () => {
             <div
               className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
               style={{ backgroundColor: "hsla(0, 0%, 0%, 0.7)" }}>
-              <div className="flex h-full w-full flex-row justify-between ">
-                <div className="w-1/3 h-1/3 m-auto">
-                  <p className="text-xl text-slate-100 drop-shadow ">Welcome to Cal Poly Pomona&apos;s</p>
-                  <h1 className="text-7xl text-slate-100 drop-shadow">NIKKEI STUDENT UNION</h1>
+              <div className="flex h-full w-full flex-col justify-center">
+                <div className="w-full h-1/4" />
+                <div className="w-2/3 h-1/4 m-auto ">
+                  <p className="text-xl text-slate-100 drop-shadow text-center">Welcome to Cal Poly Pomona&apos;s</p>
+                  <h1 className="text-6xl text-slate-100 drop-shadow text-center">NIKKEI STUDENT UNION</h1>
                 </div>
-                <div className="w-1/3 h-1/3 m-auto">
-                  <p className="text-xl text-slate-100 drop-shadow">{data.data.getAbout[0].Description}</p>
+                <div className="w-5/6 h-1/4 m-auto pt-10">
+                  <p className="text-xl text-slate-100 drop-shadow text-center">{data.data.getAbout[0].Description}</p>
                   <button
-                    className="text-slate-100 bg-rose-700 w-32 h-10 mt-3 rounded-full text-lg"
+                    className="text-slate-100 bg-rose-700 w-32 h-10 mt-3 rounded-full text-lg block m-auto"
                     onClick={handleLearnAbout}
                   >
                     About us <FontAwesomeIcon
@@ -97,6 +98,7 @@ const Home = () => {
                       className="text-slate-100 ml-1" />
                   </button>
                 </div>
+                <div className="h-1/4" />
               </div>
             </div>
           </div>
@@ -104,10 +106,9 @@ const Home = () => {
             <h1 className="h-1/6 p-12 shadow text-slate-100 text-center text-6xl">Upcoming Events</h1>
             <div className="w-5/6 h-4/6 mx-auto flex flex-col justify-center ">
               <div className="flex flex-row justify-between">
-                {data.data.threeUpcomingEvents.map((event, idx) => {
-                  console.log(event)
+                {data.data.threeUpcomingEvents.slice(0, 2).map((event, idx) => {
                   return (
-                    <EventCard key={idx} event={event} />
+                    <EventCard key={idx} event={event} isMobile={siteContext.isMobile} />
                   )
                 })}
               </div >
@@ -126,10 +127,10 @@ const Home = () => {
             <div
               className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed">
               <div className="w-screen h-screen flex flex-col justify-center">
-                <div className="w-full h-1/2 bg-slate-100 opacity-90 flex flex-col justify-center ">
+                <div className="w-full h-1/2 bg-slate-100 opacity-95 flex flex-col justify-center ">
                   <div className="h-4/5 w-full flex flex-col ">
                     <h1 className="text-6xl m-auto">{data.data.getCultureNight[0].Japanese_title}</h1>
-                    <h1 className="text-5xl m-auto">{data.data.getCultureNight[0].English_romaji}</h1>
+                    <h1 className="text-5xl m-auto">{data.data.getCultureNight[0].English_romaji} - </h1>
                     <h1 className="text-5xl m-auto">{data.data.getCultureNight[0].English_definition}</h1>
                     <p className="text-lg m-auto">{data.data.getCultureNight[0].Description}</p>
                     <button
@@ -220,9 +221,9 @@ const Home = () => {
             <div
               className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed">
               <div className="w-screen h-screen flex flex-col justify-center">
-                <div className="w-full h-1/2 bg-slate-100 opacity-90 flex flex-col justify-center ">
+                <div className="w-full h-1/2 bg-slate-100 opacity-95 flex flex-col justify-center ">
                   <div className="h-4/5 w-full flex flex-col ">
-                    <h1 className="text-6xl m-auto">{data.data.getCultureNight[0].Japanese_title} - {data.data.getCultureNight[0].English_title}</h1>
+                    <h1 className="text-6xl m-auto">{data.data.getCultureNight[0].Japanese_title} - {data.data.getCultureNight[0].English_romaji} : {data.data.getCultureNight[0].English_definition}</h1>
                     <p className="text-lg m-auto">{data.data.getCultureNight[0].Description}</p>
                     <button
                       className="bg-rose-700 text-lg w-36 h-9 text-slate-100 m-auto rounded-full"
