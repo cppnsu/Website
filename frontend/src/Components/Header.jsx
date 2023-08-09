@@ -17,9 +17,20 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const transparentNavbarStyle = "bg-transparent w-screen h-1/20 py-7 px-5 flex justify-between fixed top-0 flex-row z-30"
+  const fixedNavbarStyle = "bg-zinc-800 w-screen h-1/20 py-7 px-5 flex justify-between fixed top-0 flex-row z-30"
+
   const scrolledPast = () => {
-    //  if(window.scrollY)
+    if (window.scrollY > 80) {
+      setScrolled(true)
+    }
+    else {
+      setScrolled(false)
+    }
   }
+  window.addEventListener('scroll', scrolledPast);
+
+
 
 
   // Used to generate navbar links
@@ -66,7 +77,7 @@ const Header = () => {
     </div>
 
   return (
-    <div className="bg-transparent w-screen h-1/20 py-7 px-5 flex justify-between fixed top-0 flex-row z-30">
+    <div className={scrolled ? fixedNavbarStyle : transparentNavbarStyle}>
       {/* clickable logo that navigates to homepage */}
       <button className="w-16 md:hover:ring-2 ring-rose-700 rounded-full shadow-sm" onClick={() => { nav("/") }} >
         <img
