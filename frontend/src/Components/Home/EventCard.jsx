@@ -7,8 +7,10 @@ const EventCard = (props) => {
 
   const navigate = useNavigate();
   const handleClickLearnMore = () => {
-    const { Sign_up_form: signUp } = props.event;
-    navigate();
+    const { Name: name } = props.event;
+    const url = `/upcoming-events#${String(name).replaceAll(" ", "-")}`
+    console.log(url)
+    navigate(url);
   }
   var isMobile = props.isMobile;
   if (isMobile) {
@@ -30,8 +32,9 @@ const EventCard = (props) => {
           <p>
             <FontAwesomeIcon icon={faLocationDot} /> {props.event.Location}
           </p>
-          <button onClick={() => { navigate(`/upcoming-events#${props.event.Name}`) }} className="bg-rose-700 w-28 self-center text-slate-100 rounded-full p-1 text-md">
-            Sign up <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
+          <button onClick={handleClickLearnMore}
+            className="bg-rose-700 w-28 self-center text-slate-100 rounded-full p-1 text-md">
+            More Info <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
           </button>
         </div>
       </div>
@@ -57,7 +60,7 @@ const EventCard = (props) => {
             <FontAwesomeIcon icon={faLocationDot} /> {props.event.Location}
           </p>
           <button onClick={handleClickLearnMore} className="bg-rose-700 w-28 self-center text-slate-100 rounded-full p-1 text-md">
-            Sign up <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
+            More Info <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
           </button>
         </div>
       </div>

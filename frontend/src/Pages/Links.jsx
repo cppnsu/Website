@@ -1,4 +1,5 @@
 import useGraphql from "../Hooks/useGraphql";
+import { useEffect } from 'react';
 
 const Links = () => {
   const reqBody = `
@@ -14,7 +15,21 @@ const Links = () => {
   }
   `
 
+
   const { data, error } = useGraphql(reqBody)
+  useEffect(() => {
+    const { hash } = window.location;
+    if (hash) {
+      // Using setTimeout to ensure React has rendered the page
+      setTimeout(() => {
+        const elem = document.querySelector(hash);
+        if (elem) {
+          elem.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 0);
+    }
+  }, [data]); // Run once after the initial render
+
   // TODO: Handle if have data and if not, and also handle mobile (nested if statements)
   if (data) {
     const links = data.data.getLinksList
@@ -26,7 +41,7 @@ const Links = () => {
               <div
                 className="m-auto w-5/6 text-center"
                 key={`${link.Name}--${idx}`}>
-                <a name={link.name} />
+                <a id={String(link.Name).replaceAll(" ", "-")} />
                 <h1 className="text-slate-100 text-6xl">{link.Name}</h1>
                 <div className="flex flex-col space-y-3 mt-4">
                   {link.link_objects.map((obj, idx) => {

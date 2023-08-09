@@ -1,4 +1,5 @@
 import nsuLogoDark from "../assets/nsuLogoDark.svg"
+import nsuLogo from "../assets/NSU_logo.png"
 import { useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faX } from '@fortawesome/free-solid-svg-icons'
@@ -13,7 +14,12 @@ const Header = () => {
   const location = useLocation();
 
   // How we manage state of mobile menu being open or not
-  let [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const scrolledPast = () => {
+    //  if(window.scrollY)
+  }
 
 
   // Used to generate navbar links
@@ -49,11 +55,11 @@ const Header = () => {
 
   // desktop navbar on right side
   const Desktop =
-    <div className="flex justify-center flex-col bg-slate-100 rounded-2xl shadow-sm">
+    <div className="flex justify-center flex-col bg-rose-700 rounded-2xl ">
       <ul className="flex pl-9 sm:pl-0">
         {navBarPages.map(([title, url]) =>
           <li key={title} className="">
-            <a href={url} className={`rounded-lg mx-2 px-1 py-2 text-slate-700 ${location.pathname === url ? "font-semibold bg-slate-200" : "font-medium"} hover:font-bold`}>
+            <a href={url} className={`rounded-lg mx-2 px-1 py-2 text-slate-100 ${location.pathname === url ? "font-semibold bg-rose-500" : "font-medium"} hover:font-bold`}>
               {title}
             </a></li>)}
       </ul>
@@ -62,9 +68,9 @@ const Header = () => {
   return (
     <div className="bg-transparent w-screen h-1/20 py-7 px-5 flex justify-between fixed top-0 flex-row z-30">
       {/* clickable logo that navigates to homepage */}
-      <button className="w-16 md:hover:ring-2 ring-rose-700 rounded-full" onClick={() => { nav("/") }} >
+      <button className="w-16 md:hover:ring-2 ring-rose-700 rounded-full shadow-sm" onClick={() => { nav("/") }} >
         <img
-          src={nsuLogoDark}
+          src={nsuLogo}
           alt="nsu_logo"
         />
       </button>
