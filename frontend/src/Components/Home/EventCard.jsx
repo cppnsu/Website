@@ -8,8 +8,7 @@ const EventCard = (props) => {
   const navigate = useNavigate();
   const handleClickLearnMore = () => {
     const { Sign_up_form: signUp } = props.event;
-    console.log(signUp)
-    navigate(signUp);
+    navigate();
   }
   var isMobile = props.isMobile;
   if (isMobile) {
@@ -31,7 +30,7 @@ const EventCard = (props) => {
           <p>
             <FontAwesomeIcon icon={faLocationDot} /> {props.event.Location}
           </p>
-          <button onClick={handleClickLearnMore} className="bg-rose-700 w-28 self-center text-slate-100 rounded-full p-1 text-md">
+          <button onClick={() => { navigate(`/upcoming-events#${props.event.Name}`) }} className="bg-rose-700 w-28 self-center text-slate-100 rounded-full p-1 text-md">
             Sign up <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
           </button>
         </div>

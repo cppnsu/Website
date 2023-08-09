@@ -26,6 +26,7 @@ const Links = () => {
               <div
                 className="m-auto w-5/6 text-center"
                 key={`${link.Name}--${idx}`}>
+                <a name={link.name} />
                 <h1 className="text-slate-100 text-6xl">{link.Name}</h1>
                 <div className="flex flex-col space-y-3 mt-4">
                   {link.link_objects.map((obj, idx) => {
