@@ -43,14 +43,14 @@ const Header = () => {
 
   // what navbar looks like on mobile
   const mobileNavPage =
-    <div className="bg-slate-100 w-screen h-screen fixed inset-0 z-30">
+    <div className="bg-rose-700 w-screen h-screen fixed inset-0 z-30">
       <button onClick={() => setIsOpen(!isOpen)}>
-        <FontAwesomeIcon icon={faX} className="w-l4 h-14 px-9 py-8" />
+        <FontAwesomeIcon icon={faX} className="w-l4 h-14 px-9 py-8 text-slate-100" />
       </ button>
       <ul className="flex flex-col pl-9 py-4 ">
         {navBarPages.map(([title, url]) =>
           <li key={title} className="py-3">
-            <a href={url} className={`rounded-lg text-4xl py-2 px-2 text-slate-800 ${location.pathname === url ? "font-semibold bg-slate-200" : "font-medium"} hover:font-bold`}>
+            <a href={url} className={`drop-shadow rounded-lg text-4xl py-2 px-2 text-slate-100 ${location.pathname === url ? "font-semibold bg-rose-600" : "font-medium"} hover:font-bold`}>
               {title}
             </a></li>)}
       </ul>
@@ -59,7 +59,7 @@ const Header = () => {
   const MobileBar =
     <div className="relative right">
       <button onClick={() => setIsOpen(!isOpen)}>
-        <FontAwesomeIcon icon={faBars} className=" w-6 h-6 py-5 px-4" />
+        <FontAwesomeIcon icon={faBars} className=" w-7 h-7 py-5 px-4 text-rose-700" />
       </button>
       {isOpen ? mobileNavPage : null}
     </div>

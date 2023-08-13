@@ -5,7 +5,7 @@ import nsuLogoLight from "../assets/nsuLogoLight.svg"
 
 const Footer = () => {
   return (
-    <div className='w-screen h-40 sm:h-44 bg-rose-700 '>
+    <div className='static w-screen h-40 sm:h-44 bg-rose-700 '>
       <div className='flex justify-center sm:justify-end'>
         <div className='flex flex-col mr-5 mt-2.5'>
           <div className='w-36 pl-4'>

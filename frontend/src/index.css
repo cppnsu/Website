@@ -4,9 +4,11 @@
 @layer base {
   p {
     @apply font-body
+    text-slate-100
   }
   h1 {
     @apply font-title
+    text-slate-100
   }
 }
 @tailwind components;
