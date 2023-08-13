@@ -82,7 +82,7 @@ const typeDefs = `
   English_definition: String
   English_romaji: String
   Gallery: [String]
-  more_info_link: String
+  more_info_pdf: String
 }
   input updateCultureNight {
   _id: ID
@@ -97,7 +97,7 @@ const typeDefs = `
   English_definition: String
   English_romaji: String
   Gallery: [String]
-  more_info_link: String
+  more_info_pdf: String
 }
 
   # ABOUT 

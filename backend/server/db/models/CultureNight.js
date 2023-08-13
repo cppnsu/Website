@@ -43,7 +43,7 @@ const cultureNightSchema = new mongoose.Schema({
     type: [String],
     required: true
   },
-  more_info_link: {
+  more_info_pdf: {
     type: String,
     required: true
   }
