@@ -120,7 +120,7 @@ const Home = () => {
             </div>
           </div>
           {/* CULTURE NIGHT */}
-          <div className={`relative w-screen h-screen grid grid-cols-2 grid-rows-5 gap-y-1 gap-x-2 animate-fadeIn`}>
+          <div className={`relative w-screen h-screen grid grid-cols-2 gap-y-1 gap-x-2 animate-fadeIn bg-zinc-800`}>
             {imagesArr.map((item) => {
               return <div className="relative h-full overflow-hidden bg-cover">{item}</div>
             })}
@@ -129,10 +129,10 @@ const Home = () => {
               <div className="w-screen h-screen flex flex-col justify-center">
                 <div className="w-full h-1/2 bg-slate-100 opacity-95 flex flex-col justify-center ">
                   <div className="h-4/5 w-full flex flex-col ">
-                    <h1 className="text-6xl m-auto">{data.data.getCultureNight[0].Japanese_title}</h1>
-                    <h1 className="text-5xl m-auto">{data.data.getCultureNight[0].English_romaji} - </h1>
-                    <h1 className="text-5xl m-auto">{data.data.getCultureNight[0].English_definition}</h1>
-                    <p className="text-lg m-auto">{data.data.getCultureNight[0].Description}</p>
+                    <h1 className="text-6xl text-zinc-800 m-auto">{data.data.getCultureNight[0].Japanese_title}</h1>
+                    <h1 className="text-5xl text-zinc-800 m-auto">{data.data.getCultureNight[0].English_romaji} - </h1>
+                    <h1 className="text-5xl text-zinc-800 m-auto">{data.data.getCultureNight[0].English_definition}</h1>
+                    <p className="text-lg text-zinc-800 m-auto">{data.data.getCultureNight[0].Description}</p>
                     <button
                       className="bg-rose-700 text-lg w-36 h-9 text-slate-100 m-auto rounded-full"
                       onClick={handleLearnCultureNight}
@@ -153,7 +153,7 @@ const Home = () => {
       const imagesArr = []
 
       function cn() {
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < 12; i++) {
           let index = baseIndex + i
           imagesArr.push(
             <img
@@ -167,12 +167,12 @@ const Home = () => {
       cn();
 
       return (
-        <div className="bg-transparent">
+        <div>
           <div
-            className="relative h-screen overflow-hidden bg-cover">
+            className="relative h-screen overflow-hidden ">
             <img src={data.data.getAbout[0].Gallery[0]}
               alt="gallery image"
-              className="h-screen object-cover" />
+              className="h-screen object-cover xl:w-screen" />
             <div
               className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
               style={{ backgroundColor: "hsla(0, 0%, 0%, 0.7)" }}>
@@ -197,8 +197,8 @@ const Home = () => {
           </div>
           <div className="bg-zinc-800 w-screen h-screen">
             <h1 className="h-1/6 p-12 shadow text-slate-100 text-center text-6xl">Upcoming Events</h1>
-            <div className="w-5/6 h-4/6 mx-auto flex flex-col justify-center ">
-              <div className="flex flex-row justify-between">
+            <div className="w-5/6 h-4/6 mx-auto flex flex-col justify-center max-w-5xl">
+              <div className="flex flex-row justify-between ">
                 {data.data.threeUpcomingEvents.map((event, idx) => {
                   console.log(event)
                   return (
@@ -214,7 +214,7 @@ const Home = () => {
             </div>
           </div>
           {/* CULTURE NIGHT */}
-          <div className={`relative w-screen h-screen grid grid-cols-2 gap-y-1 gap-x-2 animate-fadeIn`}>
+          <div className={`relative w-screen h-screen grid grid-cols-3 xl:grid-cols-4 gap-2 animate-fadeIn bg-zinc-800`}>
             {imagesArr.map((item) => {
               return <div className="relative h-full overflow-hidden bg-cover">{item}</div>
             })}
@@ -223,8 +223,8 @@ const Home = () => {
               <div className="w-screen h-screen flex flex-col justify-center">
                 <div className="w-full h-1/2 bg-slate-100 opacity-95 flex flex-col justify-center ">
                   <div className="h-4/5 w-full flex flex-col ">
-                    <h1 className="text-6xl m-auto">{data.data.getCultureNight[0].Japanese_title} - {data.data.getCultureNight[0].English_romaji} : {data.data.getCultureNight[0].English_definition}</h1>
-                    <p className="text-lg m-auto">{data.data.getCultureNight[0].Description}</p>
+                    <h1 className="text-6xl text-zinc-800 m-auto">{data.data.getCultureNight[0].Japanese_title} - {data.data.getCultureNight[0].English_romaji} : {data.data.getCultureNight[0].English_definition}</h1>
+                    <p className="text-lg text-zinc-800 m-auto">{data.data.getCultureNight[0].Description}</p>
                     <button
                       className="bg-rose-700 text-lg w-36 h-9 text-slate-100 m-auto rounded-full"
                       onClick={handleLearnCultureNight}

@@ -17,8 +17,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const transparentNavbarStyle = "bg-transparent w-screen h-1/20 py-7 px-5 flex justify-between fixed top-0 flex-row z-30"
-  const fixedNavbarStyle = "bg-zinc-800 w-screen h-1/20 py-7 px-5 flex justify-between fixed top-0 flex-row z-30"
+  const transparentNavbarStyle = "bg-transparent w-screen h-1/20 py-7 px-5 flex justify-between fixed top-0 flex-row z-30 transition duration-300"
+  const fixedNavbarStyle = "bg-zinc-800 w-screen h-1/20 py-7 px-5 flex justify-between fixed top-0 flex-row z-30 transition duration-500"
 
   const scrolledPast = () => {
     if (window.scrollY > 80) {
