@@ -16,6 +16,9 @@
     @apply font-title
     text-slate-100
   }
+  button {
+    @apply font-body
+  }
 }
 @tailwind components;
 @tailwind utilities;

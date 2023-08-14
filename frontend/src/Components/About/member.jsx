@@ -10,7 +10,7 @@ const Member = (props) => {
         <img src={Headshot_Link}
           alt={`${Name}_headshot_image`}
           className="object-cover rounded" />
-        <div className="absolute w-full h-full text-center bg-black left-0 right-0 top-0 bottom-0 opacity-0 hover:opacity-90 hover:transition-all duration-300 flex flex-col space-y-2 justify-center align-center ">
+        <div className="absolute w-full h-full text-center bg-black left-0 right-0 top-0 bottom-0 opacity-0 hover:opacity-80 hover:transition-all duration-300 flex flex-col space-y-2 justify-center align-center ">
           <div className="">
             <h1 className="text-slate-100">Major:</h1>
             <p className="text-slate-100">{Major}</p>

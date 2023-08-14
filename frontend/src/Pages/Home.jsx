@@ -103,7 +103,7 @@ const Home = () => {
             </div>
           </div>
           <div className="bg-zinc-800 w-screen h-screen">
-            <h1 className="h-1/6 p-12 shadow text-slate-100 text-center text-6xl">Upcoming Events</h1>
+            <h1 className="h-1/6 p-12 drop-shadow text-slate-100 text-center text-6xl">Upcoming Events</h1>
             <div className="w-5/6 h-4/6 mx-auto flex flex-col justify-center ">
               <div className="flex flex-row justify-between">
                 {data.data.threeUpcomingEvents.slice(0, 2).map((event, idx) => {
@@ -196,7 +196,7 @@ const Home = () => {
             </div>
           </div>
           <div className="bg-zinc-800 w-screen h-screen">
-            <h1 className="h-1/6 p-12 shadow text-slate-100 text-center text-6xl">Upcoming Events</h1>
+            <h1 className="h-1/6 p-12 drop-shadow text-slate-100 text-center text-6xl">Upcoming Events</h1>
             <div className="w-5/6 h-4/6 mx-auto flex flex-col justify-center max-w-5xl">
               <div className="flex flex-row justify-between ">
                 {data.data.threeUpcomingEvents.map((event, idx) => {
