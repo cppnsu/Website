@@ -7,7 +7,7 @@ const cultureNightSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  Date: {
+  CN_Date: {
     type: Date,
     required: true
   },
