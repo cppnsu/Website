@@ -73,7 +73,7 @@ const typeDefs = `
   type cultureNight {
   _id: ID!
   Summary: String
-  CN_Date: String
+  CN_Date: Date
   Time_start: String
   Price: Float
   Featured: [String]
@@ -87,7 +87,7 @@ const typeDefs = `
   input updateCultureNight {
   _id: ID
   Summary: String
-  CN_Date: String
+  CN_Date: Date
   Time_start: String
   Time_end: String
   Price: Float
