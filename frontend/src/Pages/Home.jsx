@@ -55,10 +55,9 @@ const Home = () => {
       const galleryArr = data.data.getCultureNight[0].Gallery
       const lenGalleryArr = galleryArr.length;
       const imagesArr = []
-      console.log(data)
 
       function cn() {
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 12; i++) {
           let index = baseIndex + i
           imagesArr.push(
             <img
@@ -74,7 +73,7 @@ const Home = () => {
       return (
         <div className="bg-transparent">
           <div
-            className="relative h-screen overflow-hidden bg-cover">
+            className="relative h-screen min-h-full overflow-hidden bg-cover">
             <img src={data.data.getAbout[0].Gallery[0]}
               alt="gallery image"
               className="h-screen object-cover" />
@@ -87,7 +86,7 @@ const Home = () => {
                   <p className="text-xl text-slate-100 drop-shadow text-center">Welcome to Cal Poly Pomona&apos;s</p>
                   <h1 className="text-6xl text-slate-100 drop-shadow text-center">NIKKEI STUDENT UNION</h1>
                 </div>
-                <div className="w-5/6 h-1/4 m-auto pt-10">
+                <div className="w-5/6 h-1/4 mt-8 m-auto pt-10">
                   <p className="text-xl text-slate-100 drop-shadow text-center">{data.data.getAbout[0].Description}</p>
                   <button
                     className="text-slate-100 bg-rose-700 w-32 h-10 mt-3 rounded-full text-lg block m-auto"
@@ -105,7 +104,7 @@ const Home = () => {
           <div className="bg-zinc-800 w-screen h-screen">
             <h1 className="h-1/6 p-12 drop-shadow text-slate-100 text-center text-6xl">Upcoming Events</h1>
             <div className="w-5/6 h-4/6 mx-auto flex flex-col justify-center ">
-              <div className="flex flex-row justify-between">
+              <div className="flex flex-col justify-between">
                 {data.data.threeUpcomingEvents.slice(0, 2).map((event, idx) => {
                   return (
                     <EventCard key={idx} event={event} isMobile={siteContext.isMobile} />

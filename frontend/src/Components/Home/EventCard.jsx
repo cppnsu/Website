@@ -15,8 +15,8 @@ const EventCard = (props) => {
   var isMobile = props.isMobile;
   if (isMobile) {
     return (
-      <div className="relative w-5/12 h-96 bg-stone-100 overflow-hidden shadow-xl rounded-lg">
-        <div className="h-48">
+      <div className="relative w-11/12 h-5/12 bg-stone-100 overflow-hidden shadow-xl rounded-lg flex flex-row">
+        <div className="absolute h-48">
           <img src={props.event.Photo_url} alt="A photo" className="object-cover h-full" />
         </div>
         <div className="mt-3 flex flex-col justify-center text-center space-y-2 ">
@@ -42,7 +42,7 @@ const EventCard = (props) => {
   }
   else {
     return (
-      <div className="relative w-1/4 h-96 bg-stone-100 overflow-hidden shadow-xl rounded-lg max-w-xl">
+      <div className="relative w-1/4 h-96 bg-stone-100 overflow-hidden shadow-xl rounded-lg">
         <div className="h-48">
           <img src={props.event.Photo_url} alt="A photo" className="object-cover h-full" />
         </div>
