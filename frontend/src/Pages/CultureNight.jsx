@@ -124,7 +124,7 @@ const CultureNight = () => {
             <h1 className="text-2xl text-center my-4">Watch last year&apos;s culture night: </h1>
             {/* Gotta set youtube video src to accept only embed, will regex that ish later on  */}
             <div className="w-full max-w-3xl h-1/2">
-              <iframe style={{ width: "100%", height: "calc(100vw/1.7777777778)", maxHeight: "480px" }} src="https://www.youtube.com/embed/SjZ-kQdT3tc/" title="Last year culture night video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullscreen></iframe>
+              <iframe style={{ width: "100%", height: "calc(100vw/1.7777777778)", maxHeight: "1080px" }} src="https://www.youtube.com/embed/SjZ-kQdT3tc/" title="Last year culture night video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullscreen></iframe>
             </div>
           </div>
         </div>
