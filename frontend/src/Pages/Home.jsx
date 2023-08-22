@@ -207,7 +207,7 @@ const Home = () => {
               </div >
             </div>
             <div className="w-full h-1/6 flex justify-center">
-              <button onClick={handleLearnUpcoming} className="bg-rose-700 rounded-3xl w-44 2xl:56 h-14 2xl:h-15 shadow-lg text-slate-100 text-lg 2xl:text-2xl">
+              <button onClick={handleLearnUpcoming} className="bg-rose-700 rounded-3xl w-44 2xl:w-56 h-14 2xl:h-15 shadow-lg text-slate-100 text-lg 2xl:text-2xl">
                 View All Events <FontAwesomeIcon icon={faArrowRight} />
               </button>
             </div>
@@ -225,7 +225,7 @@ const Home = () => {
                     <h1 className="text-6xl 2xl:text-9xl text-zinc-800 m-auto">{data.data.getCultureNight[0].Japanese_title} - {data.data.getCultureNight[0].English_romaji} : {data.data.getCultureNight[0].English_definition}</h1>
                     <p className="text-lg 2xl:text-2xl text-zinc-800 m-auto">{data.data.getCultureNight[0].Description}</p>
                     <button
-                      className="bg-rose-700 text-lg 2xl:text-2xl w-36 2xl:w-44 h-9 2xl:h-10 text-slate-100 m-auto rounded-full"
+                      className="bg-rose-700 text-lg 2xl:text-2xl w-36 2xl:w-40 h-9 2xl:h-10 text-slate-100 m-auto rounded-full"
                       onClick={handleLearnCultureNight}
                     >
                       Learn More <FontAwesomeIcon icon={faArrowRight} />
