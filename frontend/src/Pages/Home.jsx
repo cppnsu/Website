@@ -195,7 +195,7 @@ const Home = () => {
             </div>
           </div>
           <div className="bg-zinc-800 w-screen h-screen">
-            <h1 className="h-1/6 p-12 drop-shadow text-slate-100 text-center text-6xl">Upcoming Events</h1>
+            <h1 className="h-1/6 p-12 drop-shadow text-slate-100 text-center text-6xl 2xl:text-9xl">Upcoming Events</h1>
             <div className="w-5/6 h-4/6 mx-auto flex flex-col justify-center max-w-5xl">
               <div className="flex flex-row justify-between ">
                 {data.data.threeUpcomingEvents.map((event, idx) => {
@@ -207,7 +207,7 @@ const Home = () => {
               </div >
             </div>
             <div className="w-full h-1/6 flex justify-center">
-              <button onClick={handleLearnUpcoming} className="bg-rose-700 rounded-3xl w-44 h-14 shadow-lg text-slate-100 text-lg">
+              <button onClick={handleLearnUpcoming} className="bg-rose-700 rounded-3xl w-44 2xl:48 h-14 2xl:h-15 shadow-lg text-slate-100 text-lg 2xl:text-2xl">
                 View All Events <FontAwesomeIcon icon={faArrowRight} />
               </button>
             </div>
@@ -222,10 +222,10 @@ const Home = () => {
               <div className="w-screen h-screen flex flex-col justify-center">
                 <div className="w-full h-1/2 bg-slate-100 opacity-95 flex flex-col justify-center ">
                   <div className="h-4/5 w-full flex flex-col ">
-                    <h1 className="text-6xl text-zinc-800 m-auto">{data.data.getCultureNight[0].Japanese_title} - {data.data.getCultureNight[0].English_romaji} : {data.data.getCultureNight[0].English_definition}</h1>
-                    <p className="text-lg text-zinc-800 m-auto">{data.data.getCultureNight[0].Description}</p>
+                    <h1 className="text-6xl 2xl:text-9xl text-zinc-800 m-auto">{data.data.getCultureNight[0].Japanese_title} - {data.data.getCultureNight[0].English_romaji} : {data.data.getCultureNight[0].English_definition}</h1>
+                    <p className="text-lg 2xl:text-2xl text-zinc-800 m-auto">{data.data.getCultureNight[0].Description}</p>
                     <button
-                      className="bg-rose-700 text-lg w-36 h-9 text-slate-100 m-auto rounded-full"
+                      className="bg-rose-700 text-lg 2xl:text-2xl w-36 2xl:w-40 h-9 2xl:h-10 text-slate-100 m-auto rounded-full"
                       onClick={handleLearnCultureNight}
                     >
                       Learn More <FontAwesomeIcon icon={faArrowRight} />
