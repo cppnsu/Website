@@ -101,11 +101,11 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="bg-zinc-800 w-screen h-screen">
-            <h1 className="h-1/6 p-12 drop-shadow text-slate-100 text-center text-6xl">Upcoming Events</h1>
-            <div className="w-5/6 h-4/6 mx-auto flex flex-col justify-center ">
-              <div className="flex flex-col justify-between">
-                {data.data.threeUpcomingEvents.slice(0, 2).map((event, idx) => {
+          <div className="bg-zinc-800 w-full h-full">
+            <h1 className="h-1/6 p-6 drop-shadow text-slate-100 text-center text-6xl">Upcoming Events</h1>
+            <div className="w-5/6 mx-auto flex flex-col justify-center ">
+              <div className="flex flex-col space-y-4 w-full h-full">
+                {data.data.threeUpcomingEvents.map((event, idx) => {
                   return (
                     <EventCard key={idx} event={event} isMobile={siteContext.isMobile} />
                   )
@@ -113,7 +113,7 @@ const Home = () => {
               </div >
             </div>
             <div className="w-full h-1/6 flex justify-center">
-              <button onClick={handleLearnUpcoming} className="bg-rose-700 rounded-3xl w-44 h-14 shadow-lg text-slate-100 text-lg">
+              <button onClick={handleLearnUpcoming} className="bg-rose-700 rounded-3xl w-44 h-14 shadow-lg text-slate-100 text-lg m-6">
                 View All Events <FontAwesomeIcon icon={faArrowRight} />
               </button>
             </div>
