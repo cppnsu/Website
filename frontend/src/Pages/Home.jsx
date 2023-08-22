@@ -83,13 +83,13 @@ const Home = () => {
               <div className="m-auto flex h-full w-full flex-col justify-center space-y-3">
                 <div className="h-1/3" />
                 <div className="w-2/3 h-1/3 m-auto">
-                  <p className="text-xl text-slate-100 drop-shadow text-center">Welcome to Cal Poly Pomona&apos;s</p>
-                  <h1 className="text-6xl text-slate-100 drop-shadow text-center">NIKKEI STUDENT UNION</h1>
+                  <p className="text-lg text-slate-100 drop-shadow text-center">Welcome to Cal Poly Pomona&apos;s</p>
+                  <h1 className="text-4xl text-slate-100 drop-shadow text-center">NIKKEI STUDENT UNION</h1>
                 </div>
                 <div className="w-5/6 h-1/3 m-auto flex flex-col justify-center">
-                  <p className="text-xl text-slate-100 drop-shadow text-center">{data.data.getAbout[0].Description}</p>
+                  <p className="text-lg text-slate-100 drop-shadow text-center">{data.data.getAbout[0].Description}</p>
                   <button
-                    className="text-slate-100 bg-rose-700 w-32 h-10 mt-3 rounded-full text-lg block m-auto"
+                    className="text-slate-100 bg-rose-700 w-32 h-10 mt-3 rounded-full text-md block m-auto"
                     onClick={handleLearnAbout}
                   >
                     About us <FontAwesomeIcon
@@ -177,13 +177,13 @@ const Home = () => {
               style={{ backgroundColor: "hsla(0, 0%, 0%, 0.7)" }}>
               <div className="flex h-full w-full flex-row justify-between ">
                 <div className="w-1/3 h-1/3 m-auto">
-                  <p className="text-xl text-slate-100 drop-shadow ">Welcome to Cal Poly Pomona&apos;s</p>
-                  <h1 className="text-7xl text-slate-100 drop-shadow">NIKKEI STUDENT UNION</h1>
+                  <p className="text-2xl 2xl:text-3xl text-slate-100 drop-shadow ">Welcome to Cal Poly Pomona&apos;s</p>
+                  <h1 className="text-7xl 2xl:text-9xl text-slate-100 drop-shadow">NIKKEI STUDENT UNION</h1>
                 </div>
                 <div className="w-1/3 h-1/3 m-auto">
-                  <p className="text-xl text-slate-100 drop-shadow">{data.data.getAbout[0].Description}</p>
+                  <p className="text-2xl 2xl:text-3xl text-slate-100 drop-shadow">{data.data.getAbout[0].Description}</p>
                   <button
-                    className="text-slate-100 bg-rose-700 w-32 h-10 mt-3 rounded-full text-lg"
+                    className="text-slate-100 bg-rose-700 w-32 h-10 mt-3 rounded-full text-xl 2xl:text-2xl"
                     onClick={handleLearnAbout}
                   >
                     About us <FontAwesomeIcon
