@@ -183,7 +183,7 @@ const Home = () => {
                 <div className="w-1/3 h-1/3 m-auto">
                   <p className="text-2xl 2xl:text-3xl text-slate-100 drop-shadow">{data.data.getAbout[0].Description}</p>
                   <button
-                    className="text-slate-100 bg-rose-700 w-32 h-10 mt-3 rounded-full text-xl 2xl:text-2xl"
+                    className="text-slate-100 bg-rose-700 w-32 h-10 2xl:h-12 2xl:w-44 mt-3 rounded-full text-xl 2xl:text-2xl"
                     onClick={handleLearnAbout}
                   >
                     About us <FontAwesomeIcon
