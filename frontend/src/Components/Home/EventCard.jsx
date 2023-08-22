@@ -42,8 +42,8 @@ const EventCard = (props) => {
   }
   else {
     return (
-      <div className="relative w-1/4 h-96 bg-stone-100 overflow-hidden shadow-xl rounded-lg">
-        <div className="h-48 2xl:h-60">
+      <div className="relative w-1/4 h-96 2xl:h-full bg-stone-100 overflow-hidden shadow-xl rounded-lg">
+        <div className="h-48 2xl:h-2/5">
           <img src={props.event.Photo_url} alt="A photo" className="object-cover h-full" />
         </div>
         <div className="mt-3 flex flex-col justify-center text-center space-y-2 ">

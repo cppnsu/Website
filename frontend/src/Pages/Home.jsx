@@ -196,7 +196,7 @@ const Home = () => {
           </div>
           <div className="bg-zinc-800 w-screen h-screen">
             <h1 className="h-1/6 p-12 drop-shadow text-slate-100 text-center text-6xl 2xl:text-9xl">Upcoming Events</h1>
-            <div className="w-5/6 h-4/6 2xl:h-5/6 mx-auto flex flex-col justify-center max-w-5xl">
+            <div className="w-5/6 h-4/6 mx-auto flex flex-col justify-center max-w-5xl">
               <div className="flex flex-row justify-between ">
                 {data.data.threeUpcomingEvents.map((event, idx) => {
                   console.log(event)
