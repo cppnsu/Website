@@ -196,7 +196,7 @@ const Home = () => {
           </div>
           <div className="bg-zinc-800 w-screen h-screen">
             <h1 className="h-1/6 p-12 drop-shadow text-slate-100 text-center text-6xl 2xl:text-9xl">Upcoming Events</h1>
-            <div className="w-5/6 h-4/6 mx-auto flex flex-col justify-center max-w-5xl">
+            <div className="w-5/6 h-4/6 2xl:h-5/6 mx-auto flex flex-col justify-center max-w-5xl">
               <div className="flex flex-row justify-between ">
                 {data.data.threeUpcomingEvents.map((event, idx) => {
                   console.log(event)
@@ -225,7 +225,7 @@ const Home = () => {
                     <h1 className="text-6xl 2xl:text-9xl text-zinc-800 m-auto">{data.data.getCultureNight[0].Japanese_title} - {data.data.getCultureNight[0].English_romaji} : {data.data.getCultureNight[0].English_definition}</h1>
                     <p className="text-lg 2xl:text-2xl text-zinc-800 m-auto">{data.data.getCultureNight[0].Description}</p>
                     <button
-                      className="bg-rose-700 text-lg 2xl:text-2xl w-36 2xl:w-40 h-9 2xl:h-10 text-slate-100 m-auto rounded-full"
+                      className="bg-rose-700 text-lg 2xl:text-2xl w-36 2xl:w-48 h-9 2xl:h-10 text-slate-100 m-auto rounded-full"
                       onClick={handleLearnCultureNight}
                     >
                       Learn More <FontAwesomeIcon icon={faArrowRight} />
