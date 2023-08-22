@@ -80,12 +80,13 @@ const Home = () => {
             <div
               className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
               style={{ backgroundColor: "hsla(0, 0%, 0%, 0.7)" }}>
-              <div className="mt-24 flex h-full w-full flex-col justify-center space-y-3">
-                <div className="w-2/3 h-1/4 m-auto">
+              <div className="m-auto flex h-full w-full flex-col justify-center space-y-3">
+                <div className="h-1/3" />
+                <div className="w-2/3 h-1/3 m-auto">
                   <p className="text-xl text-slate-100 drop-shadow text-center">Welcome to Cal Poly Pomona&apos;s</p>
                   <h1 className="text-6xl text-slate-100 drop-shadow text-center">NIKKEI STUDENT UNION</h1>
                 </div>
-                <div className="w-5/6 h-1/4 m-auto">
+                <div className="w-5/6 h-1/3 m-auto flex flex-col justify-center">
                   <p className="text-xl text-slate-100 drop-shadow text-center">{data.data.getAbout[0].Description}</p>
                   <button
                     className="text-slate-100 bg-rose-700 w-32 h-10 mt-3 rounded-full text-lg block m-auto"
