@@ -43,23 +43,23 @@ const EventCard = (props) => {
   else {
     return (
       <div className="relative w-1/4 h-96 bg-stone-100 overflow-hidden shadow-xl rounded-lg">
-        <div className="h-48">
+        <div className="h-48 2xl:h-60">
           <img src={props.event.Photo_url} alt="A photo" className="object-cover h-full" />
         </div>
         <div className="mt-3 flex flex-col justify-center text-center space-y-2 ">
-          <p className="font-extrabold text-zinc-800 text-lg">
+          <p className="font-extrabold text-zinc-800 text-lg 2xl:text-2xl">
             {props.event.Name}
           </p>
-          <p className="text-zinc-800">
+          <p className="text-zinc-800 2xl:text-xl">
             {props.event.Time_Start}
           </p>
-          <p className="text-zinc-800">
+          <p className="text-zinc-800 2xl:text-xl">
             {format(Date.parse(props.event.Date_Start), 'MMMM dd, Y', { timeZone: 'America/Los_Angeles' })}
           </p>
-          <p className="text-zinc-800">
+          <p className="text-zinc-800 2xl:text-2xl">
             <FontAwesomeIcon icon={faLocationDot} /> {props.event.Location}
           </p>
-          <button onClick={handleClickLearnMore} className="bg-rose-700 w-28 self-center text-slate-100 rounded-full p-1 text-md">
+          <button onClick={handleClickLearnMore} className="bg-rose-700 w-28 2xl:w-36 self-center text-slate-100 rounded-full p-1 text-md 2xl:text-lg">
             More Info <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
           </button>
         </div>
