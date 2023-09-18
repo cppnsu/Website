@@ -7,9 +7,7 @@ const About = () => {
     getAbout {
       _id
       Description
-      Signup_Link
       Splash_photo_link
-      Splash_photo_ID
       Board_Members {
         Name
         Position
@@ -17,14 +15,13 @@ const About = () => {
         Major
         Headshot_Link
       }
-      Gallery
     }  
   }
   `
 
   const { data, error } = useGraphql(reqBody)
   if (data) {
-    const { Description, Signup_Link, Splash_photo_link, Splash_photo_ID, Board_Members, Gallery } = data.data.getAbout[0];
+    const { Description, Splash_photo_link, Board_Members } = data.data.getAbout[0];
 
     return (
       <div className="w-screen py-32 bg-zinc-800">

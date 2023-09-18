@@ -4,15 +4,12 @@ export const SiteContext = createContext();
 
 const initialState = {
   "isLoading": false,
-  "isMobile": false,
 }
 
 const reducer = (state, action) => {
   switch (action.type) {
     case "setIsLoading":
       return { ...state, isLoading: action.value }
-    case "setIsMobile":
-      return { ...state, isMobile: action.value }
     default:
       return state
   }

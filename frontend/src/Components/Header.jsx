@@ -4,10 +4,8 @@ import { useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faX } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate, useLocation } from "react-router-dom";
-import { SiteContext } from "../SiteContext";
 
 const Header = () => {
-  const { state: siteContext, dispatch: siteDispatch } = useContext(SiteContext)
   // used to nav to homepage when clicking logo
   const nav = useNavigate();
   // used to check what current page name is 
@@ -56,17 +54,20 @@ const Header = () => {
       </ul>
     </div>
   // if menu is not open render nothing, otherwise render the navigation page
-  const MobileBar =
-    <div className="relative right">
-      <button onClick={() => setIsOpen(!isOpen)}>
-        <FontAwesomeIcon icon={faBars} className=" w-7 h-7 py-5 px-4 text-rose-700" />
-      </button>
-      {isOpen ? mobileNavPage : null}
-    </div>
+  const MobileBar = () => {
+    return (
+      <div className="md:hidden relative right">
+        <button onClick={() => setIsOpen(!isOpen)}>
+          <FontAwesomeIcon icon={faBars} className=" w-7 h-7 py-5 px-4 text-rose-700" />
+        </button>
+        {isOpen ? mobileNavPage : null}
+      </div>
+    );
+  }
 
   // desktop navbar on right side
-  const Desktop =
-    <div className="flex justify-center flex-col bg-rose-700 rounded-2xl ">
+  const Desktop = () => {
+    return (<div className="hidden md:flex justify-center flex-col bg-rose-700 rounded-2xl ">
       <ul className="flex pl-9 sm:pl-0">
         {navBarPages.map(([title, url]) =>
           <li key={title} className="">
@@ -75,6 +76,8 @@ const Header = () => {
             </a></li>)}
       </ul>
     </div>
+    );
+  }
 
   return (
     <div className={scrolled ? fixedNavbarStyle : transparentNavbarStyle}>
@@ -86,9 +89,8 @@ const Header = () => {
         />
       </button>
       {/* navlinks */}
-      {
-        siteContext.isMobile ? MobileBar : Desktop
-      }
+      <MobileBar />
+      <Desktop />
     </div >
   );
 };

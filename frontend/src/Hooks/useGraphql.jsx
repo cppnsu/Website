@@ -5,7 +5,7 @@ export default function useGraphql(reqBody) {
   const [data, setData] = useState();
   const [error, setError] = useState()
   const { state: siteContext, dispatch: siteDispatch } = useContext(SiteContext)
-  const url = "https://website-eight-sigma-79.vercel.app/graphql"
+  const url = "https://website-backend-cppnsu.vercel.app/graphql"
 
   const requestOptions = {
     method: "POST",

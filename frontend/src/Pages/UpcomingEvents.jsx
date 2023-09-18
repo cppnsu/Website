@@ -34,7 +34,7 @@ const UpcomingEvents = () => {
       setTimeout(() => {
         const elem = document.querySelector(hash);
         if (elem) {
-          elem.scrollIntoView({ behavior: 'smooth' });
+          elem.scrollIntoView({ behavior: 'smooth', block: "center", inline: "center" });
         }
       }, 0);
     }
