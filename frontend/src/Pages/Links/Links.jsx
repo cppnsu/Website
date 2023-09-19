@@ -1,4 +1,4 @@
-import useGraphql from "../Hooks/useGraphql";
+import useGraphql from "../../Hooks/useGraphql";
 import { useEffect } from 'react';
 
 const Links = () => {

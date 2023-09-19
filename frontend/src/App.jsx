@@ -9,7 +9,7 @@ import {
   Layout,
   NotFound,
   UpcomingEvents,
-} from "./Pages/Helper";
+} from "./Pages/Layout/Helper";
 import { SiteContextProvider, SiteContext } from "./SiteContext";
 import LoadingSpinner from "./Components/LoadingSpinner"
 
