@@ -82,7 +82,7 @@ const Header = () => {
   return (
     <div className={scrolled ? fixedNavbarStyle : transparentNavbarStyle}>
       {/* clickable logo that navigates to homepage */}
-      <button className="w-16 md:hover:ring-2 ring-rose-700 rounded-full shadow-sm" onClick={() => { nav("/") }} >
+      <button className="w-12 md:w-16 md:hover:ring-2 ring-rose-700 rounded-full shadow-sm" onClick={() => { nav("/") }} >
         <img
           src={nsuLogo}
           alt="nsu_logo"
