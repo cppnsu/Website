@@ -35,9 +35,9 @@ const CN = ({ info, handleClick }) => {
     <div
       className={`relative w-screen h-screen grid grid-cols-2 gap-y-1 gap-x-2 animate-fadeIn bg-zinc-800`}
     >
-      {imagesArr.map((item) => {
+      {imagesArr.map((item, idx) => {
         return (
-          <div className="relative h-full overflow-hidden bg-cover">{item}</div>
+          <div className="relative h-full overflow-hidden bg-cover" key={idx}>{item}</div>
         );
       })}
       <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed">

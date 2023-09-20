@@ -9,6 +9,7 @@ import {
   Layout,
   NotFound,
   UpcomingEvents,
+  Login
 } from "./Pages/Layout/Helper";
 import { SiteContextProvider, SiteContext } from "./SiteContext";
 import LoadingSpinner from "./Components/LoadingSpinner"
@@ -26,6 +27,7 @@ function App() {
               <Route path="upcoming-events" element={<UpcomingEvents />} />
               <Route path="links" element={<Links />} />
               <Route path="culture-night" element={<CultureNight />} />
+              <Route path="login" element={<Login />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
