@@ -68,6 +68,7 @@ const CultureNight = () => {
       Time_start,
       more_info_pdf,
     } = data.data.getCultureNight[0];
+    
     const cultureNightNumber = () => {
       const test = new Date();
       const currYear = test.getFullYear();

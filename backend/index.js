@@ -6,7 +6,7 @@ const { json } = require("body-parser")
 const typeDefs = require("./server/graphql/typeDefs")
 const resolvers = require("./server/graphql/resolvers")
 const cors = require("cors");
-
+const jwt = require("jsonwebtoken")
 
 async function startApolloServer() {
   const app = express();
@@ -32,7 +32,24 @@ async function startApolloServer() {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context: { dbo }
+    // Here, every route in resolvers gets access to the database object, as well as the JWT token role
+    context: ({req}) => {
+      const token = req.headers.authorization || ''
+      console.log("TOKEN", token)
+      try {
+        const userInfo = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, userInfo) => {
+          if(err) {
+            throw new Error("Token invalid")
+          }
+          else {
+            return userInfo
+          }
+        })
+        return {dbo, userInfo}
+      } catch (err) {
+        return {dbo}
+      }
+    }
   });
   await server.start();
 
@@ -41,8 +58,22 @@ async function startApolloServer() {
     cors(),
     json(),
     expressMiddleware(server, {
-      context: async ({ req }) => ({ token: req.headers.token }),
-    }),
+      context: ({req}) => {
+        const token = req.headers.authorization || ''
+        try {
+          const userInfo = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, userInfo) => {
+            if(err) {
+              throw new Error("Token invalid")
+            }
+            else {
+              return userInfo
+            }
+          })
+          return {dbo, userInfo}
+        } catch (err) {
+          return {dbo}
+        }
+}}),
   );
 
   app.get('/', (req, res) => {

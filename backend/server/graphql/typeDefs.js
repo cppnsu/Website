@@ -22,7 +22,7 @@ const typeDefs = `
     Sign_up_form: String!
   }
   input addEventInput {
-  _id: ID!
+  _id: ID
   Name: String!
   Date_Start: String!
   Date_End: String
@@ -100,9 +100,52 @@ const typeDefs = `
   more_info_pdf: String
 }
 
+# USERS
+type User {
+  _id: ID!
+  email: String!
+  password: String!
+  role: String
+}
+input userInput {
+  _id: ID
+  email: String!
+  password: String!
+  role: String
+}
+input updateUserRole {
+  _id: ID
+  email: String!
+  password: String
+  role: String!
+}
+
+# TOKENS
+type accessToken {
+  accessToken: String!
+}
+type refreshToken {
+  refreshToken: String!
+}
+type authPayload {
+  accessToken: String!
+  refreshToken: String!
+}
+
+input inputAccessToken {
+  authToken: String!
+}
+input inputRefreshToken {
+  refreshToken: String!
+}
+input inputAuthPayload {
+  accessToken: String!
+  refreshToken: String!
+}
+
   # ABOUT 
   type About {
-  _id: ID!
+  _id: ID
   Description: String
   Signup_Link: String
   Splash_photo_link: String
@@ -111,6 +154,7 @@ const typeDefs = `
   Gallery: [String]
 }
 type boardMember {
+  _id: ID
   Name: String
   Position: String
   Year: String
@@ -118,6 +162,7 @@ type boardMember {
   Headshot_Link: String
 }
 input boardMemberInput {
+  _id: ID
   Name: String
   Position: String
   Year: String
@@ -125,7 +170,7 @@ input boardMemberInput {
   Headshot_Link: String
 }
   input updateAbout {
-  _id: ID!
+  _id: ID
   Description: String
   Signup_Link: String
   Splash_photo_link: String
@@ -155,6 +200,10 @@ input boardMemberInput {
     deleteLinkSection(input: String!): Links
     updateCultureNight(input: ID): cultureNight
     updateAbout(input: ID): About
+    signUserUp(input: userInput): User
+    updateUserToMember(input: updateUserRole): User
+    logUserIn(input: userInput) : authPayload!
+    updateAccessToken(input: inputRefreshToken!): accessToken!
   }
 `;
 
